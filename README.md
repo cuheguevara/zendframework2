@@ -10,24 +10,18 @@ looking to get their feet wet with ZF2.
 
 Installation
 ------------
-
-Using Composer (recommended)
-----------------------------
-The recommended way to get a working copy of this project is to clone the repository
-and use composer to install dependencies:
-
-    cd my/project/dir
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git
-    cd ZendSkeletonApplication
-    php composer.phar install
-
-Using Git submodules
---------------------
-Alternatively, you can install using native git submodules:
-
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
-
-Virtual Host
-------------
-Afterwards, set up a virtual host to point to the public/ directory of the
+Afterwards, set up an alias to point to the public/ directory of the
 project and you should be ready to go!
+
+XAMPP : 
+file : /xampp/apache/conf/httpd.conf
+#add this
+Include "conf/extra/zendframework2.conf"
+
+on conf/extra/zendframework2.conf
+Alias /zendframework2 "<path>/public"
+<Directory "<path>/public">
+    AllowOverride All
+    Order allow,deny
+	Allow from all
+</Directory>
